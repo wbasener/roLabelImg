@@ -592,11 +592,13 @@ class Canvas(QWidget):
             p.setPen(color)
             brush = QBrush(Qt.BDiagPattern)
             p.setBrush(brush)
-            p.drawRect(leftTop.x(), leftTop.y(), rectWidth, rectHeight)
+            #p.drawRect(leftTop.x(), leftTop.y(), rectWidth, rectHeight) # Modified by Basener
+            p.drawRect(int(leftTop.x()), int(leftTop.y()), int(rectWidth), int(rectHeight))
             
             #draw dialog line of rectangle
             p.setPen(self.lineColor)
-            p.drawLine(leftTop.x(),rightBottom.y(),rightBottom.x(),leftTop.y())
+            #p.drawLine(leftTop.x(),rightBottom.y(),rightBottom.x(),leftTop.y()) # Modified by Basener
+            p.drawLine(int(leftTop.x()),int(rightBottom.y()),int(rightBottom.x()),int(leftTop.y()))
 
         self.setAutoFillBackground(True)
         if self.verified:
